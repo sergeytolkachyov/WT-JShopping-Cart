@@ -1,0 +1,53 @@
+<?php
+/**
+ * @package    WT JShopping Cart
+ * @author     Sergey Tolkachyov, info@web-tolk.ru https://web-tolk.ru
+ * @copyright  Copyright (C) 2022 Sergey Tolkachyov. All rights reserved.
+ * @license    GNU General Public License version 3 or later
+ * @link 	   https://web-tolk.ru/en/dev/joomla-modules/wt-jshopping-cart-modul-bootstrap-5-korziny-dlya-joomshopping-5-i-joomla-4.html
+ */
+defined('_JEXEC') or die('Restricted access');
+
+use Joomla\CMS\Language\Text;
+
+/**
+ * Module params
+ * echo '<pre';
+ * print_r($params);
+ * echo '</pre';
+ *
+ * Get module param - $param->get('param_name');
+ ************
+ * JoomShopping cart data
+ * * echo '<pre';
+ * print_r($cart);
+ * echo '</pre';
+ *
+ * Get cart data
+ * echo $cart->param_name
+ */
+?>
+
+	<button id="wt_jshopping_cart_<?php echo $module->id; ?>"
+			role="button"
+			class="btn position-relative wt_jshopping_cart wt-jshopping-cart-module-icon <?php echo $moduleclass_sfx; ?>"
+			title="<?php echo Text::_('MOD_WTJSHOPPINGCART_GO_TO_CART'); ?>"
+			data-bs-toggle="offcanvas"
+		<?php if ($params->get('bs_target_id')): ?>
+			data-bs-target="#wt_jshopping_cart_<?php echo $params->get('bs_target_id'); ?>"
+		<?php endif; ?>
+	>
+		<i class="<?php echo $params->get('icon_css_class', 'fas fa-shopping-cart'); ?>"></i>
+		<span class="position-absolute top-0 start-100 translate-middle badge border-light rounded-pill bg-danger digit">
+			<?php echo $cart->count_product; ?>
+			<span class="visually-hidden"><?php print Text::_('MOD_WTJSHOPPINGCART_GO_TO_CART'); ?></span>
+		</span>
+	</button>
+<?php if ($params->get('show_debug', 0)): ?>
+	<details>
+		<summary class="btn btn-danger btn-block"><?php echo Text::_('MOD_WTJSHOPPINGCART_DEBUG'); ?></summary>
+		<?php echo '<pre>';
+		print_r($cart);
+		echo '</pre>'; ?>
+	</details>
+<?php endif; ?>
