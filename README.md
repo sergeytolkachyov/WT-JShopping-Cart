@@ -1,5 +1,6 @@
 # WT JShopping Cart
 Bootstrap 5 Cart module for JoomShopping 5 and Joomla 4
+https://web-tolk.ru/en/dev/joomla-modules/wt-jshopping-cart-modul-bootstrap-5-korziny-dlya-joomshopping-5-i-joomla-4.html
 
 The shopping cart module for the JoomShopping 5 and Joomla 4 online store has 6 output layouts:
 - default - standard output of the JoomShopping bucket. Not related to Bootstrap at all.
