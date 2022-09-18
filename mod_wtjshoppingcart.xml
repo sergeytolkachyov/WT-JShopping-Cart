@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="module" version="4.1.0" client="site" method="upgrade">
+<extension type="module" client="site" method="upgrade">
 <name>MOD_WTJSHOPPINGCART</name>
-    <creationDate>26.05.2022</creationDate>
+    <creationDate>09.07.2022</creationDate>
     <author>Sergey Tolkachyov</author>
     <authorEmail>infop@web-tolk.ru</authorEmail>
     <authorUrl>https://web-tolk.ru</authorUrl>
     <copyright>Sergey Tokachyov</copyright>
     <license>Open Source License, GNU GPL</license>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <description>Displays a JoomShopping cart</description>
 	<namespace path="src">Joomla\Module\Wtjshoppingcart</namespace>
 	<scriptfile>script.php</scriptfile>
