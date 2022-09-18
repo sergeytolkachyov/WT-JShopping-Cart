@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" client="site" method="upgrade">
 <name>MOD_WTJSHOPPINGCART</name>
-    <creationDate>09.07.2022</creationDate>
+    <creationDate>18/09/2022</creationDate>
     <author>Sergey Tolkachyov</author>
     <authorEmail>infop@web-tolk.ru</authorEmail>
     <authorUrl>https://web-tolk.ru</authorUrl>
     <copyright>Sergey Tokachyov</copyright>
     <license>Open Source License, GNU GPL</license>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <description>Displays a JoomShopping cart</description>
 	<namespace path="src">Joomla\Module\Wtjshoppingcart</namespace>
 	<scriptfile>script.php</scriptfile>
-	<media folder="media" destination="mod_wtjshoppingcart">
-		<folder>css</folder>
-	</media>
     <files>
-        <filename module="mod_wtjshoppingcart">mod_wtjshoppingcart.php</filename>
-        <folder>tmpl</folder>
-        <folder>src</folder>
-        <folder>fields</folder>
+		<folder module="mod_wtjshoppingcart">src</folder>
+		<folder>tmpl</folder>
+		<folder>language</folder>
+		<folder>services</folder>
     </files>
 	<languages folder="language">
 		<language tag="en-GB">en-GB/en-GB.mod_wtjshoppingcart.ini</language>
@@ -29,7 +26,7 @@
     <config>
         <fields name="params">
             <fieldset name="basic">  
-			<field addfieldpath="modules/mod_wtjshoppingcart/fields" type="moduleinfo" name="moduleinfo"/>
+			<field addfieldprefix="Joomla\Module\Wtjshoppingcart\Site\Fields" type="moduleinfo" name="moduleinfo"/>
                 <field
                     name="moduleclass_sfx"
                     type="text"
