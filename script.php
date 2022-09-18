@@ -129,6 +129,7 @@ class mod_wtjshoppingcartInstallerScript
 			<a class='btn btn-sm btn-outline-primary' href='https://web-tolk.ru' target='_blank'>https://web-tolk.ru</a>
 			<a class='btn btn-sm btn-outline-primary' href='mailto:info@web-tolk.ru'><i class='icon-envelope'></i> info@web-tolk.ru</a>
 		</p>
+		<p><a class='btn btn-info' href='https://t.me/joomlaru' target='_blank'>Joomla Russian Community in Telegram</a></p>
 		".Text::_($element."_MAYBE_INTERESTING")."
 		</div>
 

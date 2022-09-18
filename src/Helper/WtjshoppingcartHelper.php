@@ -7,28 +7,33 @@
  */
 
 namespace Joomla\Module\Wtjshoppingcart\Site\Helper;
+
+use Joomla\CMS\Application\CMSApplicationInterface;
 use Joomla\Component\Jshopping\Site\Lib\JSFactory;
+use Joomla\Registry\Registry;
 
 
 \defined('_JEXEC') or die;
+
 /**
  * The helper class of a module
  *
  * @since  1.0
  */
-
-class WtjshoppingcartHelper{
+class WtjshoppingcartHelper
+{
 
 	public static function getAjax()
 	{
 
 		$cart = JSFactory::getModel('cart', 'jshop');
 		$cart->load("cart");
-		$cart->addLinkToProducts(1,$type="cart");
+		$cart->addLinkToProducts(1, $type = "cart");
 		$ajax_cart = array(
 			'count_products' => $cart->count_product,
-			'price_product' => \JSHelper::formatprice($cart->price_product),
+			'price_product'  => \JSHelper::formatprice($cart->price_product),
 		);
+
 		return json_encode($ajax_cart);
 
 	}
@@ -40,13 +45,14 @@ class WtjshoppingcartHelper{
 	 *
 	 * @return object jshopCart
 	 */
-	public static function getCart(&$params)
+	public static function getCart(Registry &$params, CMSApplicationInterface $app)
 	{
-		$cart = JSFactory::getModel('cart', 'jshop');
+		$cart = \JSFactory::getModel('Cart', 'Site');
 		$cart->load("cart");
-		$cart->addLinkToProducts(1,$type="cart");
+		$cart->addLinkToProducts(1, $type = "cart");
 
 		return $cart;
 	}
 }
+
 ?>
