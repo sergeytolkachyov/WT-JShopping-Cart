@@ -1,11 +1,11 @@
 <?php
 /**
- * @package       WebTolk plugin info field
- * @version       1.0.0
- * @Author        Sergey Tolkachyov, https://web-tolk.ru
- * @copyright     Copyright (C) 2020 Sergey Tolkachyov
- * @license       GNU/GPL http://www.gnu.org/licenses/gpl-2.0.html
- * @since         1.0.0
+ * @package    WT JShopping Cart
+ * @version    1.0.3
+ * @author Sergey Tolkachyov <https://web-tolk.ru>
+ * @сopyright (c) 2022 - August 2023 Sergey Tolkachyov. All rights reserved.
+ * @license    GNU/GPL license: https://www.gnu.org/copyleft/gpl.html
+ * @link https://web-tolk.ru
  */
 namespace Joomla\Module\Wtjshoppingcart\Site\Fields;
 defined('_JEXEC') or die;

@@ -1,10 +1,11 @@
 <?php
 /**
  * @package    WT JShopping Cart
- * @author     Sergey Tolkachyov, info@web-tolk.ru https://web-tolk.ru
- * @copyright  Copyright (C) 2022 Sergey Tolkachyov. All rights reserved.
- * @license    GNU General Public License version 3 or later
- * @link       https://web-tolk.ru/en/dev/joomla-modules/wt-jshopping-cart-modul-bootstrap-5-korziny-dlya-joomshopping-5-i-joomla-4.html
+ * @version    1.0.3
+ * @author Sergey Tolkachyov <https://web-tolk.ru>
+ * @сopyright (c) 2022 - August 2023 Sergey Tolkachyov. All rights reserved.
+ * @license    GNU/GPL license: https://www.gnu.org/copyleft/gpl.html
+ * @link https://web-tolk.ru
  */
 defined('_JEXEC') or die('Restricted access');
 
@@ -58,7 +59,7 @@ use Joomla\CMS\Language\Text;
 </tr>
 <tr>
     <td colspan="3" align="right">
-      <a href = "<?php echo \JSHelper::SEFLink('index.php?option=com_jshopping&controller=cart&task=view', 1)?>"><?php print Text::_('MOD_WTJSHOPPINGCART_GO_TO_CART')?></a>
+      <a href = "<?php echo \JSHelper::SEFLink('index.php?option=com_jshopping&controller=cart', 1)?>"><?php print Text::_('MOD_WTJSHOPPINGCART_GO_TO_CART')?></a>
     </td>
 </tr>
 </table>
