@@ -1,10 +1,11 @@
 <?php
 /**
- * @package     WT Yandex Map items
- *
- * @copyright   (C) 2022 Sergey Tolkachyov
+ * @package    WT JShopping Cart
+ * @version    1.0.3
+ * @author Sergey Tolkachyov <https://web-tolk.ru>
+ * @сopyright (c) 2022 - August 2023 Sergey Tolkachyov. All rights reserved.
+ * @license    GNU/GPL license: https://www.gnu.org/copyleft/gpl.html
  * @link https://web-tolk.ru
- * @license     GNU General Public License version 2 or later
  */
 
 namespace Joomla\Module\Wtjshoppingcart\Site\Dispatcher;
@@ -66,6 +67,8 @@ class Dispatcher extends AbstractModuleDispatcher
 
 		$data['jshopConfig'] = \JSFactory::getConfig();
 		$data['cart'] = WtjshoppingcartHelper::getCart($data['params'], $this->getApplication());
+		$data['checkout_url'] = WtjshoppingcartHelper::getCheckoutUrl($data['params'], $this->getApplication());
+		$data['checkout_url'] = $data['params']->get('');
 
 		return $data;
 	}

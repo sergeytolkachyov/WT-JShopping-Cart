@@ -1,10 +1,11 @@
 <?php
 /**
  * @package    WT JShopping Cart
- * @author     Sergey Tolkachyov, info@web-tolk.ru https://web-tolk.ru
- * @copyright  Copyright (C) 2022 Sergey Tolkachyov. All rights reserved.
- * @license    GNU General Public License version 3 or later
- * @link       https://web-tolk.ru/en/dev/joomla-modules/wt-jshopping-cart-modul-bootstrap-5-korziny-dlya-joomshopping-5-i-joomla-4.html
+ * @version    1.0.3
+ * @author Sergey Tolkachyov <https://web-tolk.ru>
+ * @сopyright (c) 2022 - August 2023 Sergey Tolkachyov. All rights reserved.
+ * @license    GNU/GPL license: https://www.gnu.org/copyleft/gpl.html
+ * @link https://web-tolk.ru
  */
 defined('_JEXEC') or die('Restricted access');
 
@@ -45,7 +46,7 @@ use Joomla\CMS\Language\Text;
  */
 ?>
 
-<a id="jshop_module_cart<?php echo $module->id;?>"  role="button" class="btn btn-light btn-sm position-relative d-inline-flex flex-column p-1 wt_jshop_module_cart wt-jshopping-cart-module-icon <?php echo $params->get('moduleclass_sfx');?>" href="<?php print \JSHelper::SEFLink('index.php?option=com_jshopping&view=cart', 1);?>" rel="nofollow" title="<?php print Text::_('MOD_WTJSHOPPINGCART_GO_TO_CART');?>">
+<a id="jshop_module_cart<?php echo $module->id;?>"  role="button" class="btn btn-light btn-sm position-relative d-inline-flex flex-column p-1 wt_jshop_module_cart wt-jshopping-cart-module-icon <?php echo $params->get('moduleclass_sfx');?>" href="<?php print \JSHelper::SEFLink('index.php?option=com_jshopping&controller=cart', 1);?>" rel="nofollow" title="<?php print Text::_('MOD_WTJSHOPPINGCART_GO_TO_CART');?>">
 	<i class="<?php echo $params->get('icon_css_class', 'fas fa-shopping-cart');?>"></i> <?php print Text::_('MOD_WTJSHOPPINGCART_CART');?>
 	<span class="position-absolute top-0 start-100 translate-middle badge border-light rounded-pill bg-danger digit">
 		<?php echo $cart->count_product;?>

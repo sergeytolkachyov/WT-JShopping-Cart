@@ -1,10 +1,11 @@
 <?php
 /**
- * @package         WT JShopping Cart
- *
- * @copyright   (C) 2022 Sergey Tolkachyov
- * @link            https://web-tolk.ru
- * @license         GNU General Public License version 2 or later
+ * @package    WT JShopping Cart
+ * @version    1.0.3
+ * @author Sergey Tolkachyov <https://web-tolk.ru>
+ * @сopyright (c) 2022 - August 2023 Sergey Tolkachyov. All rights reserved.
+ * @license    GNU/GPL license: https://www.gnu.org/copyleft/gpl.html
+ * @link https://web-tolk.ru
  */
 
 defined('_JEXEC') or die;
