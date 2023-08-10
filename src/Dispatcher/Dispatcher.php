@@ -67,8 +67,6 @@ class Dispatcher extends AbstractModuleDispatcher
 
 		$data['jshopConfig'] = \JSFactory::getConfig();
 		$data['cart'] = WtjshoppingcartHelper::getCart($data['params'], $this->getApplication());
-		$data['checkout_url'] = WtjshoppingcartHelper::getCheckoutUrl($data['params'], $this->getApplication());
-		$data['checkout_url'] = $data['params']->get('');
 
 		return $data;
 	}
