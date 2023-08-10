@@ -56,23 +56,6 @@ class WtjshoppingcartHelper
 		return $cart;
 	}
 
-	/**
-	 * Get a JoomShopping checkout url
-	 *
-	 * @param   Registry  &$params  object holding the models parameters
-	 *
-	 * @return object jshopCart
-	 */
-	public static function getCheckoutUrl (Registry &$params, CMSApplicationInterface $app)
-	{
-		$cart = self::getCart($params, $app);
-		$cartpreview = \JSFactory::getModel('cartPreview', 'jshop');
-		$cartpreview->setCart($cart);
-		$cartpreview->setCheckoutStep(0);
-		$checkout_url = $cartpreview->getUrlCheckout();
-		var_dump($checkout_url);
-		return $checkout_url;
-	}
 }
 
 ?>
