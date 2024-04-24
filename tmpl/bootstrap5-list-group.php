@@ -1,9 +1,9 @@
 <?php
 /**
  * @package    WT JShopping Cart
- * @version    1.0.3
+ * @version    1.0.5
  * @author Sergey Tolkachyov <https://web-tolk.ru>
- * @сopyright (c) 2022 - August 2023 Sergey Tolkachyov. All rights reserved.
+ * @сopyright (c) 2022 - April 2024 Sergey Tolkachyov. All rights reserved.
  * @license    GNU/GPL license: https://www.gnu.org/copyleft/gpl.html
  * @link https://web-tolk.ru
  */
@@ -48,7 +48,7 @@ use Joomla\CMS\Language\Text;
 
 ?>
 <div id="jshop_module_cart<?php echo $module->id; ?>" class="wt_jshop_module_cart <?php echo $params->get('moduleclass_sfx');?>">
-	<?php if ($cart->getSum(0, 1) > 0): ?>
+    <?php if (count((array)$cart->products) > 0): ?>
 		<ol class="list-group list-group-numbered">
 
 			<?php foreach ($cart->products as $product): ?>
