@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" client="site" method="upgrade">
 <name>MOD_WTJSHOPPINGCART</name>
-    <creationDate>August 2023</creationDate>
+    <creationDate>April 2024</creationDate>
     <author>Sergey Tolkachyov</author>
     <authorEmail>infop@web-tolk.ru</authorEmail>
     <authorUrl>https://web-tolk.ru</authorUrl>
     <copyright>Sergey Tokachyov</copyright>
     <license>Open Source License, GNU GPL</license>
-    <version>1.0.3</version>
+    <version>1.0.5</version>
     <description>Displays a JoomShopping cart</description>
 	<namespace path="src">Joomla\Module\Wtjshoppingcart</namespace>
 	<scriptfile>script.php</scriptfile>
@@ -18,10 +18,10 @@
 		<folder>services</folder>
     </files>
 	<languages folder="language">
-		<language tag="en-GB">en-GB/en-GB.mod_wtjshoppingcart.ini</language>
-		<language tag="ru-RU">ru-RU/ru-RU.mod_wtjshoppingcart.ini</language>
-		<language tag="en-GB">en-GB/en-GB.mod_wtjshoppingcart.sys.ini</language>
-		<language tag="ru-RU">ru-RU/ru-RU.mod_wtjshoppingcart.sys.ini</language>
+		<language tag="en-GB">en-GB/mod_wtjshoppingcart.ini</language>
+		<language tag="ru-RU">ru-RU/mod_wtjshoppingcart.ini</language>
+		<language tag="en-GB">en-GB/mod_wtjshoppingcart.sys.ini</language>
+		<language tag="ru-RU">ru-RU/mod_wtjshoppingcart.sys.ini</language>
 	</languages>
     <config>
         <fields name="params">
@@ -79,7 +79,11 @@
 					<option value="offcanvas-end">MOD_WTJSHOPPINGCART_FIELD_BOOTSTRAP5_OFFCANVAS_POSITION_RIGHT_LABEL</option>
 				</field>
 				<field type="note" label="MOD_WTJSHOPPINGCART_FIELD_BOOTSTRAP5_OFFCANVAS_TARGET_ID_HEADER_LABEL" description="MOD_WTJSHOPPINGCART_FIELD_BOOTSTRAP5_OFFCANVAS_TARGET_ID_HEADER_DESC" class="alert alert-info"/>
-				<field type="text" name="bs_target_id" label="MOD_WTJSHOPPINGCART_FIELD_BOOTSTRAP5_OFFCANVAS_TARGET_ID_LABEL" filter="integer"/>
+				<field type="modulelist"
+					   addfieldprefix="Joomla\Module\Wtjshoppingcart\Site\Fields"
+					   name="bs_target_id"
+					   label="MOD_WTJSHOPPINGCART_FIELD_BOOTSTRAP5_OFFCANVAS_TARGET_ID_LABEL"
+					   filter="integer"/>
 				<field
 						name="show_debug"
 						type="radio"
@@ -94,6 +98,6 @@
         </fields>
     </config>    
 	<updateservers>
-			<server type="extension" name="Web Tolk Update Server - WT JShopping Cart Module">https://web-tolk.ru/component/swjprojects/jupdate.html?element=mod_wtjshoppingcart</server>
+			<server type="extension" name="Web Tolk Update Server - WT JShopping Cart Module">https://web-tolk.ru/component/swjprojects/jupdate?element=mod_wtjshoppingcart</server>
 	</updateservers>	
 </extension>

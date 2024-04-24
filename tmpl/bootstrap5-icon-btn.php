@@ -1,9 +1,9 @@
 <?php
 /**
  * @package    WT JShopping Cart
- * @version    1.0.3
+ * @version    1.0.5
  * @author Sergey Tolkachyov <https://web-tolk.ru>
- * @сopyright (c) 2022 - August 2023 Sergey Tolkachyov. All rights reserved.
+ * @сopyright (c) 2022 - April 2024 Sergey Tolkachyov. All rights reserved.
  * @license    GNU/GPL license: https://www.gnu.org/copyleft/gpl.html
  * @link https://web-tolk.ru
  */
@@ -51,7 +51,7 @@ use Joomla\CMS\Language\Text;
 			class="btn position-relative wt_jshopping_cart wt-jshopping-cart-module-icon <?php echo $params->get('moduleclass_sfx'); ?>"
 			title="<?php echo Text::_('MOD_WTJSHOPPINGCART_GO_TO_CART'); ?>"
 			data-bs-toggle="offcanvas"
-		<?php if ($params->get('bs_target_id')): ?>
+		<?php if (!empty($params->get('bs_target_id'))): ?>
 			data-bs-target="#wt_jshopping_cart_<?php echo $params->get('bs_target_id'); ?>"
 		<?php endif; ?>
 	>
