@@ -1,19 +1,19 @@
 <?php
 /**
  * @package    WT JShopping Cart
- * @version    1.0.5
- * @author Sergey Tolkachyov <https://web-tolk.ru>
- * @сopyright (c) 2022 - April 2024 Sergey Tolkachyov. All rights reserved.
+ * @version    1.1.0
+ * @author     Sergey Tolkachyov
+ * @сopyright  Copyright (c) 2022 - 2024 Sergey Tolkachyov. All rights reserved.
  * @license    GNU/GPL license: https://www.gnu.org/copyleft/gpl.html
- * @link https://web-tolk.ru
+ * @link       https://web-tolk.ru
  */
-defined('_JEXEC') or die('Restricted access');
+\defined('_JEXEC') or die('Restricted access');
 
 use Joomla\CMS\Application\CMSApplicationInterface;
-use Joomla\CMS\Factory;
 use Joomla\Input\Input;
 use Joomla\Registry\Registry;
 use Joomla\CMS\Language\Text;
+use Joomla\Component\Jshopping\Site\Helper\Helper as JSHelper;
 
 /**
  * @var \stdClass               $module   The module
@@ -22,6 +22,7 @@ use Joomla\CMS\Language\Text;
  * @var Registry                $params   Module params
  * @var Registry                $template Template params
  * @var object                  $cart     JoomShopping Cart object
+ * @var object                  $jshopConfig JoomShopping config object
  *
  * And your own vars wich you can set in your module displatcher
  * src/Dispatcher/Dispatcher.php in function getLayoutData().
@@ -30,14 +31,14 @@ use Joomla\CMS\Language\Text;
  */
 /**
  * Module params
- * echo '<pre';
+ * echo '<pre>';
  * print_r($params);
  * echo '</pre';
  *
  * Get module param - $param->get('param_name');
  ************
  * JoomShopping cart data
- * * echo '<pre';
+ * * echo '<pre>';
  * print_r($cart);
  * echo '</pre';
  *
@@ -59,7 +60,7 @@ use Joomla\CMS\Language\Text;
 </tr>
 <tr>
     <td colspan="3" align="right">
-      <a href = "<?php echo \JSHelper::SEFLink('index.php?option=com_jshopping&controller=cart', 1)?>"><?php print Text::_('MOD_WTJSHOPPINGCART_GO_TO_CART')?></a>
+      <a href = "<?php echo JSHelper::SEFLink('index.php?option=com_jshopping&controller=cart', 1)?>"><?php print Text::_('MOD_WTJSHOPPINGCART_GO_TO_CART')?></a>
     </td>
 </tr>
 </table>

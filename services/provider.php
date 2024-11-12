@@ -1,14 +1,14 @@
 <?php
 /**
  * @package    WT JShopping Cart
- * @version    1.0.5
- * @author Sergey Tolkachyov <https://web-tolk.ru>
- * @сopyright (c) 2022 - April 2024 Sergey Tolkachyov. All rights reserved.
+ * @version    1.1.0
+ * @author     Sergey Tolkachyov
+ * @сopyright  Copyright (c) 2022 - 2024 Sergey Tolkachyov. All rights reserved.
  * @license    GNU/GPL license: https://www.gnu.org/copyleft/gpl.html
- * @link https://web-tolk.ru
+ * @link       https://web-tolk.ru
  */
 
-defined('_JEXEC') or die;
+\defined('_JEXEC') or die;
 
 use Joomla\CMS\Extension\Service\Provider\HelperFactory;
 use Joomla\CMS\Extension\Service\Provider\Module;
