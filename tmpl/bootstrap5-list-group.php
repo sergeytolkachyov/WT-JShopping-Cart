@@ -1,13 +1,13 @@
 <?php
 /**
  * @package    WT JShopping Cart
- * @version    1.0.5
- * @author Sergey Tolkachyov <https://web-tolk.ru>
- * @сopyright (c) 2022 - April 2024 Sergey Tolkachyov. All rights reserved.
+ * @version    1.1.0
+ * @author     Sergey Tolkachyov
+ * @сopyright  Copyright (c) 2022 - 2024 Sergey Tolkachyov. All rights reserved.
  * @license    GNU/GPL license: https://www.gnu.org/copyleft/gpl.html
- * @link https://web-tolk.ru
+ * @link       https://web-tolk.ru
  */
-defined('_JEXEC') or die('Restricted access');
+\defined('_JEXEC') or die('Restricted access');
 
 use Joomla\CMS\Application\CMSApplicationInterface;
 use Joomla\CMS\Factory;
@@ -23,6 +23,7 @@ use Joomla\CMS\Language\Text;
  * @var Registry                $params   Module params
  * @var Registry                $template Template params
  * @var object                  $cart     JoomShopping Cart object
+ * @var object                  $jshopConfig JoomShopping config object
  *
  * And your own vars wich you can set in your module displatcher
  * src/Dispatcher/Dispatcher.php in function getLayoutData().
@@ -31,14 +32,14 @@ use Joomla\CMS\Language\Text;
  */
 /**
  * Module params
- * echo '<pre';
+ * echo '<pre>';
  * print_r($params);
  * echo '</pre';
  *
  * Get module param - $param->get('param_name');
  ************
  * JoomShopping cart data
- * * echo '<pre';
+ * * echo '<pre>';
  * print_r($cart);
  * echo '</pre';
  *
@@ -61,7 +62,7 @@ use Joomla\CMS\Language\Text;
 					</div>
 					<div class="ms-2 me-auto">
 						<div class="fw-bold"><?php echo $product['product_name']; ?></div>
-						<small class="text-muted"><?php echo $product['quantity'], ' x ', \JSHelper::formatprice($product['price']); ?></small>
+						<small class="text-muted"><?php echo $product['quantity'], ' x ', JSHelper::formatprice($product['price']); ?></small>
 						<?php // Атрибуты товара
 						if ($product['attributes_value'] && count($product['attributes_value']) > 0 && $params->get('show_product_attributes', 0) == 1):
 							$attributes = [];
@@ -73,7 +74,7 @@ use Joomla\CMS\Language\Text;
 							<small class="text-muted"><?php echo implode(', ', $attributes); ?></small>
 						<?php endif; ?>
 					</div>
-					<span class="badge bg-primary rounded-pill"><?php echo \JSHelper::formatprice($product['quantity'] * $product['price']); ?></span>
+					<span class="badge bg-primary rounded-pill"><?php echo JSHelper::formatprice($product['quantity'] * $product['price']); ?></span>
 				</a>
 			<?php endforeach; ?>
 		</ol>
@@ -86,15 +87,15 @@ use Joomla\CMS\Language\Text;
 
 		<div class="border-1 p-2 d-flex">
 			<div class="ms-2 me-auto h5">
-				<?php echo Text::_('MOD_WTJSHOPPINGCART_CART_TOTAL'); ?> <?php echo \JSHelper::formatprice($cart->getSum(0, 1)); ?>
+				<?php echo Text::_('MOD_WTJSHOPPINGCART_CART_TOTAL'); ?> <?php echo JSHelper::formatprice($cart->getSum(0, 1)); ?>
 			</div>
 			<div class="btn-group">
 				<a class="wt_jshop_module_cart btn btn-outline-primary btn-sm"
-				   href="<?php echo \JSHelper::SEFLink('index.php?option=com_jshopping&controller=cart'); ?>"
+				   href="<?php echo JSHelper::SEFLink('index.php?option=com_jshopping&controller=cart'); ?>"
 				   rel="nofollow"
 				   title="<?php echo Text::_('MOD_WTJSHOPPINGCART_GO_TO_CART'); ?>"><?php echo Text::_('MOD_WTJSHOPPINGCART_GO_TO_CART'); ?></a>
 				<a class="wt_jshop_module_cart btn btn-primary btn-sm"
-				   href="<?php echo \JSHelper::SEFLink('index.php?option=com_jshopping&controller=checkout'); ?>"
+				   href="<?php echo JSHelper::SEFLink('index.php?option=com_jshopping&controller=checkout'); ?>"
 				   rel="nofollow"
 				   title="<?php echo Text::_('MOD_WTJSHOPPINGCART_CHECKOUT'); ?>"><?php echo Text::_('MOD_WTJSHOPPINGCART_CHECKOUT'); ?></a>
 			</div>

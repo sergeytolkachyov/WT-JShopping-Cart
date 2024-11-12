@@ -1,21 +1,22 @@
 <?php
 /**
  * @package    WT JShopping Cart
- * @version    1.0.5
- * @author Sergey Tolkachyov <https://web-tolk.ru>
- * @сopyright (c) 2022 - April 2024 Sergey Tolkachyov. All rights reserved.
+ * @version    1.1.0
+ * @author     Sergey Tolkachyov
+ * @сopyright  Copyright (c) 2022 - 2024 Sergey Tolkachyov. All rights reserved.
  * @license    GNU/GPL license: https://www.gnu.org/copyleft/gpl.html
- * @link https://web-tolk.ru
+ * @link       https://web-tolk.ru
  */
 
 namespace Joomla\Module\Wtjshoppingcart\Site\Dispatcher;
 
 \defined('JPATH_PLATFORM') or die;
 
-use Exception;
+use \Exception;
 use Joomla\CMS\Application\CMSApplicationInterface;
 use Joomla\CMS\Dispatcher\AbstractModuleDispatcher;
 use Joomla\CMS\Extension\ModuleInterface;
+use Joomla\Component\Jshopping\Site\Lib\JSFactory;
 use Joomla\Input\Input;
 use Joomla\Module\Wtjshoppingcart\Site\Helper\WtjshoppingcartHelper;
 
@@ -56,16 +57,13 @@ class Dispatcher extends AbstractModuleDispatcher
 		{
 			throw new Exception('Please install JoomShopping', 500);
 		}
-		if(!class_exists('JSHelper')){
-			require_once(JPATH_SITE . '/components/com_jshopping/bootstrap.php');
-		}
+		require_once(JPATH_SITE . '/components/com_jshopping/bootstrap.php');
 
 		$data = parent::getLayoutData();
 
-		\JSFactory::loadCssFiles();
-		\JSFactory::loadLanguageFile();
+		JSFactory::loadLanguageFile();
 
-		$data['jshopConfig'] = \JSFactory::getConfig();
+		$data['jshopConfig'] = JSFactory::getConfig();
 		$data['cart'] = WtjshoppingcartHelper::getCart($data['params'], $this->getApplication());
 
 		return $data;

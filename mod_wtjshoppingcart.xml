@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" client="site" method="upgrade">
 <name>MOD_WTJSHOPPINGCART</name>
-    <creationDate>April 2024</creationDate>
+    <creationDate>12.11.2024</creationDate>
     <author>Sergey Tolkachyov</author>
-    <authorEmail>infop@web-tolk.ru</authorEmail>
+    <authorEmail>info@web-tolk.ru</authorEmail>
     <authorUrl>https://web-tolk.ru</authorUrl>
-    <copyright>Sergey Tokachyov</copyright>
+    <copyright>Copyright (c) 2022 - 2024 Sergey Tolkachyov. All rights reserved.</copyright>
     <license>Open Source License, GNU GPL</license>
-    <version>1.0.5</version>
+    <version>1.1.0</version>
     <description>Displays a JoomShopping cart</description>
 	<namespace path="src">Joomla\Module\Wtjshoppingcart</namespace>
 	<scriptfile>script.php</scriptfile>
@@ -16,6 +16,7 @@
 		<folder>tmpl</folder>
 		<folder>language</folder>
 		<folder>services</folder>
+		<folder>media</folder>
     </files>
 	<languages folder="language">
 		<language tag="en-GB">en-GB/mod_wtjshoppingcart.ini</language>
@@ -23,6 +24,9 @@
 		<language tag="en-GB">en-GB/mod_wtjshoppingcart.sys.ini</language>
 		<language tag="ru-RU">ru-RU/mod_wtjshoppingcart.sys.ini</language>
 	</languages>
+	<media folder="media" destination="mod_wtjshoppingcart">
+		<folder>js</folder>
+	</media>
     <config>
         <fields name="params">
             <fieldset name="basic">  
@@ -93,11 +97,11 @@
 					<option value="1">JSHOW</option>
 					<option value="0">JHIDE</option>
 				</field>
-
-            </fieldset> 
+            </fieldset>
         </fields>
     </config>    
 	<updateservers>
 			<server type="extension" name="Web Tolk Update Server - WT JShopping Cart Module">https://web-tolk.ru/component/swjprojects/jupdate?element=mod_wtjshoppingcart</server>
-	</updateservers>	
+	</updateservers>
+	<changelogurl>https://web-tolk.ru/jchangelog?element=mod_wtjshoppingcart</changelogurl>
 </extension>
