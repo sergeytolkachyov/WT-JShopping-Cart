@@ -2,9 +2,6 @@ window.wtJshopModuleCart = window.wtJshopModuleCart || {};
 
 (wtJshopModuleCart => {
 
-    // wtJshopModuleCart.moduleIds = wtJshopModuleCart.moduleIds || wtJshopModuleCart.getModuleIds();
-
-
     wtJshopModuleCart.init = () => {
         let moduleIds = document.querySelectorAll('[data-wt-jshop-module-cart]');
         moduleIds.forEach((module) => {
