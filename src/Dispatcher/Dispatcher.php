@@ -1,7 +1,7 @@
 <?php
 /**
  * @package    WT JShopping Cart
- * @version    1.1.0
+ * @version    1.1.1
  * @author     Sergey Tolkachyov
  * @сopyright  Copyright (c) 2022 - 2024 Sergey Tolkachyov. All rights reserved.
  * @license    GNU/GPL license: https://www.gnu.org/copyleft/gpl.html
