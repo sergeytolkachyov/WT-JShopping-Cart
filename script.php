@@ -1,7 +1,7 @@
 <?php
 /**
  * @package    WT JShopping Cart
- * @version    1.1.0
+ * @version    1.1.1
  * @author     Sergey Tolkachyov
  * @сopyright  Copyright (c) 2022 - 2024 Sergey Tolkachyov. All rights reserved.
  * @license    GNU/GPL license: https://www.gnu.org/copyleft/gpl.html
@@ -10,9 +10,7 @@
 \defined('_JEXEC') or die;
 
 use Joomla\CMS\Application\AdministratorApplication;
-use Joomla\CMS\Cache\Cache;
 use Joomla\CMS\Factory;
-use Joomla\CMS\Helper\LibraryHelper;
 use Joomla\CMS\Installer\InstallerAdapter;
 use Joomla\CMS\Installer\InstallerScriptInterface;
 use Joomla\CMS\Language\Text;
@@ -51,7 +49,7 @@ return new class () implements ServiceProviderInterface {
              *
              * @since  1.0.0
              */
-            protected string $minimumJoomla = '5.0.0';
+            protected string $minimumJoomla = '4.0.0';
 
             /**
              * Minimum PHP version required to install the extension.
