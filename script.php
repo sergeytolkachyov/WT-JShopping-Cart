@@ -58,7 +58,7 @@ return new class () implements ServiceProviderInterface {
              *
              * @since  1.0.0
              */
-            protected string $minimumPhp = '8.1';
+            protected string $minimumPhp = '7.4';
 
             /**
              * Constructor.
