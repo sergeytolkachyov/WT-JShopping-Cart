@@ -1,0 +1,13 @@
+.idea
+.phing
+.packages
+.codex/hooks.json
+.pf/process-forge.local.yaml
+.pf/runtime/
+.pf/private-notes/
+.pf/cache/
+.secrets/
+*.tmp
+*.bak
+.agents/build/local.properties
+.agents/qa/local.properties

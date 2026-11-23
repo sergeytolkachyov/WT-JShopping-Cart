@@ -1,0 +1,66 @@
+<?php
+
+/**
+ * @package    WT JShopping Cart
+ * @version    1.1.1
+ * @author     Sergey Tolkachyov
+ * @copyright  Copyright (c) 2022 - 2024 Sergey Tolkachyov. All rights reserved.
+ * @license    GNU/GPL license: https://www.gnu.org/copyleft/gpl.html
+ * @link       https://web-tolk.ru
+ * @since      1.0.0
+ */
+
+\defined('_JEXEC') or die('Restricted access');
+use Joomla\CMS\Application\CMSApplicationInterface;
+use Joomla\CMS\Factory;
+use Joomla\Input\Input;
+use Joomla\Registry\Registry;
+use Joomla\CMS\Language\Text;
+use Joomla\Component\Jshopping\Site\Helper\Helper as JSHelper;
+
+/**
+ * @var \stdClass               $module   The module
+ * @var CMSApplicationInterface $app      The application instance
+ * @var Input                   $input    The input instance for $_GET, $_POST data etc.
+ * @var Registry                $params   Module params
+ * @var Registry                $template Template params
+ * @var object                  $cart     JoomShopping Cart object
+ * @var object                  $jshopConfig JoomShopping config object
+ *
+ * And your own vars wich you can set in your module displatcher
+ * src/Dispatcher/Dispatcher.php in function getLayoutData().
+ * When you return $data['your_own_variable_name'] function getLayoutData() here
+ * you'll access to it via $your_own_variable_name
+ */
+/**
+ * Module params
+ * dump($params);
+ *
+ * Get module param - $param->get('param_name');
+ ************
+ * JoomShopping cart data
+ * dump($cart);
+ *
+ * Get cart data
+ * echo $cart->param_name
+ */
+?>
+
+    <a data-wt-jshop-module-cart="<?php echo $module->id; ?>" id="jshop_module_cart<?php echo $module->id; ?>" role="button"
+       class="btn position-relative wt_jshop_module_cart wt-jshopping-cart-module-icon <?php echo $params->get('moduleclass_sfx'); ?>"
+       href="<?php echo JSHelper::SEFLink('index.php?option=com_jshopping&controller=cart', 1); ?>" rel="nofollow"
+       title="<?php print Text::_('MOD_WTJSHOPPINGCART_GO_TO_CART'); ?>">
+        <i class="<?php echo $params->get('icon_css_class', 'fas fa-shopping-cart'); ?>"></i>
+     <span class="position-absolute top-0 start-100 translate-middle badge border-light rounded-pill bg-danger digit">
+            <span data-wt-jshop-module-cart-count><?php echo $cart->count_product; ?></span>
+            <span class="visually-hidden"><?php print Text::_('MOD_WTJSHOPPINGCART_GO_TO_CART'); ?></span>
+       </span>
+    </a>
+<?php if ($params->get('show_debug', 0)) :
+    ?>
+ <details>
+        <summary class="btn btn-danger btn-block"><?php echo Text::_('MOD_WTJSHOPPINGCART_DEBUG'); ?></summary>
+        <?php dump($cart); ?>
+    </details>
+    <?php
+endif; ?>

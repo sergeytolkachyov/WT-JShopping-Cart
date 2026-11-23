@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="WT JShopping Cart Packaging" default="1. Info">
+    <property environment="env"/>
+    <property file="${project.basedir}/.agents/build/local.properties"/>
+    <property name="packagerRoot" value="${env.PHING_PACKAGER_ROOT}"/>
+    <property name="config" value="${project.basedir}/.agents/build/package.config.json"/>
+    <import file="${packagerRoot}/build.xml"/>
+    <property name="packagePhp" value="php"/>
+
+    <target name="3. Package release" description="Build the Joomla package with the module and plugin">
+        <exec executable="${packagePhp}" passthru="true" checkreturn="true">
+            <arg value="${project.basedir}/.agents/build/assemble-package.php"/>
+            <arg value="${packagerRoot}"/>
+            <arg value="packageRelease"/>
+        </exec>
+    </target>
+
+    <target name="5. Package dev" description="Build the Joomla developer package">
+        <exec executable="${packagePhp}" passthru="true" checkreturn="true">
+            <arg value="${project.basedir}/.agents/build/assemble-package.php"/>
+            <arg value="${packagerRoot}"/>
+            <arg value="packageDev"/>
+        </exec>
+    </target>
+
+    <target name="Package module only" description="Build the standalone module ZIP">
+        <project action="packageRelease" config="${project.basedir}/.agents/build/module.package.config.json"/>
+    </target>
+</project>

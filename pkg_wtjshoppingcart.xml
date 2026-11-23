@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="package" method="upgrade">
+    <name>PKG_WTJSHOPPINGCART</name>
+    <packagename>wtjshoppingcart</packagename>
+    <author>Sergey Tolkachyov</author>
+    <authorEmail>info@web-tolk.ru</authorEmail>
+    <authorUrl>https://web-tolk.ru</authorUrl>
+    <creationDate>19.11.2026</creationDate>
+    <copyright>Copyright (C) 2022 - 2026 Sergey Tolkachyov</copyright>
+    <license>Open Source License, GNU GPL</license>
+    <version>1.2.0</version>
+    <description>PKG_WTJSHOPPINGCART_XML_DESCRIPTION</description>
+    <scriptfile>pkg_script.php</scriptfile>
+    <blockChildUninstall>true</blockChildUninstall>
+    <files>
+        <folder type="module" id="mod_wtjshoppingcart" client="site">mod_wtjshoppingcart</folder>
+        <folder type="plugin" id="wtjshoppingproductsajaxaddtocart" group="jshoppingproducts">plg_jshoppingproducts_wtjshoppingproductsajaxaddtocart</folder>
+    </files>
+    <languages folder="language">
+        <language tag="en-GB">en-GB/pkg_wtjshoppingcart.sys.ini</language>
+        <language tag="ru-RU">ru-RU/pkg_wtjshoppingcart.sys.ini</language>
+    </languages>
+</extension>
