@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="jshoppingproducts" method="upgrade">
+    <name>PLG_JSHOPPINGPRODUCTS_WTJSHOPPINGPRODUCTSAJAXADDTOCART</name>
+    <author>Sergey Tolkachyov</author>
+    <authorEmail>info@web-tolk.ru</authorEmail>
+    <authorUrl>https://web-tolk.ru</authorUrl>
+    <creationDate>19.11.2026</creationDate>
+    <copyright>Copyright (C) 2021 - 2026 Sergey Tolkachyov</copyright>
+    <license>GNU General Public License version 3 or later</license>
+    <version>1.2.0</version>
+    <description>PLG_JSHOPPINGPRODUCTS_WTJSHOPPINGPRODUCTSAJAXADDTOCART_DESC</description>
+    <namespace path="src">Joomla\Plugin\Jshoppingproducts\WtJshoppingProductsAjaxAddToCart</namespace>
+    <files>
+        <folder plugin="wtjshoppingproductsajaxaddtocart">src</folder>
+        <folder>services</folder>
+    </files>
+    <media folder="media" destination="plg_jshoppingproducts_wtjshoppingproductsajaxaddtocart">
+        <folder>js</folder>
+    </media>
+    <languages folder="language">
+        <language tag="en-GB">en-GB/plg_jshoppingproducts_wtjshoppingproductsajaxaddtocart.ini</language>
+        <language tag="en-GB">en-GB/plg_jshoppingproducts_wtjshoppingproductsajaxaddtocart.sys.ini</language>
+        <language tag="ru-RU">ru-RU/plg_jshoppingproducts_wtjshoppingproductsajaxaddtocart.ini</language>
+        <language tag="ru-RU">ru-RU/plg_jshoppingproducts_wtjshoppingproductsajaxaddtocart.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                    name="plugininfo"
+                    type="plugininfo"
+                    addfieldprefix="Joomla\Plugin\Jshoppingproducts\WtJshoppingProductsAjaxAddToCart\Fields"/>
+                <field
+                    name="btn_css_class_for_product_added"
+                    type="text"
+                    label="PLG_JSHOPPINGPRODUCTS_WTJSHOPPINGPRODUCTSAJAXADDTOCART_BTN_CSS_CLASS_FOR_PRODUCT_ADDED"
+                    default="btn-success"/>
+                <field
+                    name="btn_text_for_product_added"
+                    type="text"
+                    label="PLG_JSHOPPINGPRODUCTS_WTJSHOPPINGPRODUCTSAJAXADDTOCART_BTN_TEXT_FOR_PRODUCT_ADDED"
+                    description="PLG_JSHOPPINGPRODUCTS_WTJSHOPPINGPRODUCTSAJAXADDTOCART_BTN_TEXT_FOR_PRODUCT_ADDED_DESC"
+                    default="PLG_JSHOPPINGPRODUCTS_WTJSHOPPINGPRODUCTSAJAXADDTOCART_BTN_TEXT_IN_CART"/>
+            </fieldset>
+            <fieldset name="ajax_add_to_cart" label="PLG_JSHOPPINGPRODUCTS_WTJSHOPPINGPRODUCTSAJAXADDTOCART_FIELDSET_AJAX_ADD_TO_CART_LABEL">
+                <field
+                    name="ajax_list_button_selector"
+                    type="text"
+                    filter="raw"
+                    label="PLG_JSHOPPINGPRODUCTS_WTJSHOPPINGPRODUCTSAJAXADDTOCART_FIELD_AJAX_LIST_BUTTON_SELECTOR_LABEL"
+                    description="PLG_JSHOPPINGPRODUCTS_WTJSHOPPINGPRODUCTSAJAXADDTOCART_FIELD_AJAX_LIST_BUTTON_SELECTOR_DESC"
+                    default="[wt-jshopping-add-to-cart-btn]"
+                    hint="[wt-jshopping-add-to-cart-btn]"/>
+                <field
+                    name="ajax_product_button_selector"
+                    type="text"
+                    filter="raw"
+                    label="PLG_JSHOPPINGPRODUCTS_WTJSHOPPINGPRODUCTSAJAXADDTOCART_FIELD_AJAX_PRODUCT_BUTTON_SELECTOR_LABEL"
+                    description="PLG_JSHOPPINGPRODUCTS_WTJSHOPPINGPRODUCTSAJAXADDTOCART_FIELD_AJAX_PRODUCT_BUTTON_SELECTOR_DESC"
+                    default="[wt-jshopping-add-to-cart-btn]"
+                    hint="[wt-jshopping-add-to-cart-btn]"/>
+                <field
+                    name="ajax_list_quantity_selector"
+                    type="text"
+                    filter="raw"
+                    label="PLG_JSHOPPINGPRODUCTS_WTJSHOPPINGPRODUCTSAJAXADDTOCART_FIELD_AJAX_LIST_QUANTITY_SELECTOR_LABEL"
+                    description="PLG_JSHOPPINGPRODUCTS_WTJSHOPPINGPRODUCTSAJAXADDTOCART_FIELD_AJAX_LIST_QUANTITY_SELECTOR_DESC"
+                    default="[wt-jshopping-add-to-cart-qty]"
+                    hint="[wt-jshopping-add-to-cart-qty]"/>
+                <field
+                    name="ajax_product_quantity_selector"
+                    type="text"
+                    filter="raw"
+                    label="PLG_JSHOPPINGPRODUCTS_WTJSHOPPINGPRODUCTSAJAXADDTOCART_FIELD_AJAX_PRODUCT_QUANTITY_SELECTOR_LABEL"
+                    description="PLG_JSHOPPINGPRODUCTS_WTJSHOPPINGPRODUCTSAJAXADDTOCART_FIELD_AJAX_PRODUCT_QUANTITY_SELECTOR_DESC"
+                    default="[wt-jshopping-add-to-cart-qty]"
+                    hint="[wt-jshopping-add-to-cart-qty]"/>
+                <field
+                    name="ajax_add_to_cart_help"
+                    type="note"
+                    label="PLG_JSHOPPINGPRODUCTS_WTJSHOPPINGPRODUCTSAJAXADDTOCART_FIELD_AJAX_ADD_TO_CART_HELP_LABEL"
+                    description="PLG_JSHOPPINGPRODUCTS_WTJSHOPPINGPRODUCTSAJAXADDTOCART_FIELD_AJAX_ADD_TO_CART_HELP_DESC"
+                    class="alert alert-info"/>
+                <field
+                    name="ajax_list_template_help"
+                    type="note"
+                    label="PLG_JSHOPPINGPRODUCTS_WTJSHOPPINGPRODUCTSAJAXADDTOCART_FIELD_AJAX_LIST_TEMPLATE_HELP_LABEL"
+                    description="PLG_JSHOPPINGPRODUCTS_WTJSHOPPINGPRODUCTSAJAXADDTOCART_FIELD_AJAX_LIST_TEMPLATE_HELP_DESC"
+                    class="alert alert-info"/>
+                <field
+                    name="ajax_product_template_help"
+                    type="note"
+                    label="PLG_JSHOPPINGPRODUCTS_WTJSHOPPINGPRODUCTSAJAXADDTOCART_FIELD_AJAX_PRODUCT_TEMPLATE_HELP_LABEL"
+                    description="PLG_JSHOPPINGPRODUCTS_WTJSHOPPINGPRODUCTSAJAXADDTOCART_FIELD_AJAX_PRODUCT_TEMPLATE_HELP_DESC"
+                    class="alert alert-info"/>
+            </fieldset>
+        </fields>
+    </config>
+</extension>

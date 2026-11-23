@@ -1,0 +1,17 @@
+{
+  "name": "WT JShopping Products AJAX Add to Cart",
+  "version": "1.2.0",
+  "root": "../../plg_jshoppingproducts_wtjshoppingproductsajaxaddtocart",
+  "author": "Sergey Tolkachyov",
+  "authorEmail": "info@web-tolk.ru",
+  "link": "https://web-tolk.ru",
+  "copyright": "Copyright (c) %s Sergey Tolkachyov. All rights reserved.",
+  "projectDateStart": "2021",
+  "packageDir": "../.packages",
+  "stageDir": "../.packages/.stage",
+  "packageNamePattern": "wtjshoppingproductsajaxaddtocart_{version}.zip",
+  "replace": {
+    "versionDocblock": false,
+    "versionPackageJson": false
+  }
+}

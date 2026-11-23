@@ -1,0 +1,14 @@
+/**
+ * @package    WT JShopping Cart
+ * @version    1.2.0
+ * @author     Sergey Tolkachyov
+ * @copyright  Copyright (c) 2022 - 2026 Sergey Tolkachyov. All rights reserved.
+ * @license    GNU/GPL license: https://www.gnu.org/copyleft/gpl.html
+ * @since      1.2.0
+ */
+
+.offcanvas[data-wt-jshop-module-cart].show,
+.offcanvas[data-wt-jshop-module-cart].showing,
+.offcanvas[data-wt-jshop-module-cart].hiding {
+  visibility: visible;
+}

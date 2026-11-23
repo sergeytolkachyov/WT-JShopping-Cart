@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<ruleset name="WT-JShopping-Cart">
+    <description>Joomla PSR-12 formatting without runtime refactoring.</description>
+    <rule ref="PSR12"/>
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="560"/>
+            <property name="absoluteLineLimit" value="560"/>
+        </properties>
+    </rule>
+</ruleset>
